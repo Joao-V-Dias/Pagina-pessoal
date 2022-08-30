@@ -1,0 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+#cabeçalho{
+    display: flex;
+    width: 100%;
+    height: 5vw;
+    justify-content: center;
+}
+
+.ancora_cabeçalho{
+    text-decoration: none;
+    
+}
