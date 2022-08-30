@@ -1,24 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarala&display=swap');
+
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Sarala', sans-serif;
+    overflow-x: hidden;
 }
 
-#cabeçalho{
+body{
+    background-color: #0d1c2c;
+}
+
+#cabecalho{
     display: flex;
     width: 100%;
     height: 5vw;
     justify-content: center;
 }
 
-.ancora_cabeçalho{
+.ancora_cabecalho{
     text-decoration: none;
-    
+    color: #fff;
+    padding: 0.7vw 4vw;
+    font-size: 2vw;
 }
 
 img{
-    width: 10px
+    width: 5vw;
+    border-radius: 50%;
+    margin: 1vw;
 }
 
-#redes_sociais{
-    width: 10px;
+nav{
+    width: 6vw;
+    position: fixed;
+    top: 45%;
 }
+
+span{
+    color: #ff1100;
+}
+
+#inicio{
+    color: #fff;
+    font-size: 4vw;
+    width: 50%;
+    margin: 20vw auto;
+}
+
+p{
+    font-size: 2vw;
+}
+
+button{
+    width: 14vw;
+    height: 4vw;
+    font-size: 2vw;
+    color: #fff;
+    background-color: #0B2E47;
+    border: 0.1vw solid white;
+}
+
+#sobre_mim{
+    color: rgb(199, 199, 199);
+    width: 50%;
+    font-size: 3vw;
+    margin: auto;
+}
+
+#projetos{
+    display: flex;
+}
+
+.projeto{
+    margin: auto;
+}
+
