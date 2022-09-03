@@ -9,47 +9,104 @@
   </head>
 
   <body>
-    <header id="cabecalho">
-      <a href="#inicio" class="ancora_cabecalho">Início</a>
-      <a href="#sobre_mim" class="ancora_cabecalho">Sobre</a>
-      <a href="#projetos" class="ancora_cabecalho">Projetos</a>
+    <header>
+      <nav>
+        <li><a href="#inicio" class="cabecalho">Início</a></li>
+        <li><a href="#sobre_mim" class="cabecalho">Sobre</a></li>
+        <li><a href="#projetos" class="cabecalho">Projetos</a></li>
+      </nav>
+      <nav>afdwa</nav>
     </header>
     <main>
-      <nav>
-        <a href="#"><img src="./img/github.png" alt="github"  id="redes_sociais"/></a>
-        <a href="#"><img src="./img/instagram.png" alt="instagram"  id="redes_sociais"/></a>
-        
-      </nav>
       <section id="inicio">
-        <h3>Oi, meu nome é <span>João</span>!</h3>
-        <p>Patrocínio, Minas Gerais</p>
-        <a href="curriculum vitae.pdf" download="curriculo.pdf"
-          ><button>currículo</button></a
-        >
+        <div id="text_inicio">
+          <span id="bem_vindo">Bem-vindo ao meu Portfólio</span>
+          <h2>Meu nome é <span>João</span></h2>
+          <p>E eu sou a universal</p>
+          <a href="./curriculum vitae.pdf" download="curriculo.pdf"
+            ><button class="btn_inicio">Curriculo</button></a
+          >
+          <a href="https://github.com/Joao-V-Dias"
+            ><button class="btn_inicio">GitHub</button></a
+          >
+        </div>
+        <img
+          src="./img/astronaut-suit-animate.svg"
+          alt="Gif astronauta"
+          id="img_astronauta"
+        />
       </section>
       <section id="sobre_mim">
-        <p>
-          Meu nome é joao blablabla blablabla
-          blablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablablabla
-        </p>
+        <div id="text_sobre_mim">
+          <img src="./img/astronaut-suit-animate.svg" alt="foto" id="foto" />
+          <h4>Sobre Mim</h4>
+          <p>
+            Meu nome é João, tenho 17 anos, moro em Patrocínio, estudo no IFTM e
+            curso Infórmatica. <br />Gosto de praticar esportes, principalmente
+            basquete e futebol, gosto de ler, ouvir música e meu estilo favorito
+            é o Rap.
+          </p>
+        </div>
       </section>
       <section id="projetos">
-        <div class="projeto">
-          <img src="./img/Captura de Tela (1).png" alt="" id="imagem_projetos" />
-          <!--descrição-->
-          <p>esse projeto é bla bla bla</p>
-          <p>tecnologias</p>
-          <button>VER</button>
-        </div>
-        <div class="projeto">
-          <img src="" alt="" />
-          <!--descrição-->
-          <p>esse projeto é bla bla bla</p>
-          <p>tecnologias</p>
-          <button>VER</button>
+        <h3>Projetos</h3>
+        <div id="text_projetos">
+          <div class="card_projeto">
+            <img
+              src="./img/astronaut-suit-animate.svg"
+              alt="imagem do projeto"
+              class="img_projeto"
+            />
+            <h5>TI Dicas</h5>
+            <p class="descricao">
+              Feito baseado na matéria Manutenção e suporte de computadores e
+              redes locais do IFTM, onde ensinamos a cuidar do seu computador.
+            </p>
+            <p class="tecnologias">Google</p>
+            <a href="#"><button class="btn_visualizar">VISUALIZAR</button></a>
+          </div>
+          <div class="card_projeto">
+            <img
+              src="./img/astronaut-suit-animate.svg"
+              alt="imagem do projeto"
+              class="img_projeto"
+            />
+            <h5>Nome Projeto</h5>
+            <p class="descricao">Esse projetor é</p>
+            <p class="tecnologias"></p>
+            <a href="#"><button class="btn_visualizar">VISUALIZAR</button></a>
+          </div>
+          <div class="card_projeto">
+            <img
+              src="./img/astronaut-suit-animate.svg"
+              alt="imagem do projeto"
+              class="img_projeto"
+            />
+            <h5>Nome Projeto</h5>
+            <p class="descricao">Esse projetor é</p>
+            <p class="tecnologias"></p>
+            <a href="#"><button class="btn_visualizar">VISUALIZAR</button></a>
+          </div>
+          <div class="card_projeto">
+            <img
+              src="./img/astronaut-suit-animate.svg"
+              alt="imagem do projeto"
+              class="img_projeto"
+            />
+            <h5>Nome Projeto</h5>
+            <p class="descricao">Esse projetor é</p>
+            <p class="tecnologias"></p>
+            <a href="#"><button class="btn_visualizar">VISUALIZAR</button></a>
+          </div>
         </div>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <nav>
+        <a href="#"><img src="" alt="instagram" /></a>
+        <a href="#"><img src="" alt="github" /></a>
+      </nav>
+      <p>Feito por João Victor - 2º Inf - IFTM</p>
+    </footer>
   </body>
 </html>
