@@ -218,7 +218,7 @@ footer {
 
 #joao{
     text-align: center;
-    font-size: 400%;
+    font-size: 10vh;
     color: #00ff88;
     animation: joao 10s linear infinite;
 }
@@ -226,10 +226,10 @@ footer {
 .inputs{
     color: #fff;
     background-color: rgb(114, 114, 114);
-    font-size: 200%;
+    font-size: 4vh;
     text-align: center;
-    margin: 10% auto 2% auto;
-    width: 30%;
+    margin: 2vh auto;
+    width: 15vh;
     border: none;
 }
 
