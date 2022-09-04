@@ -71,6 +71,10 @@ li {
     border: none;
 }
 
+span{
+    color: #00ff88;
+}
+
 #monitor{
     width: 50vh;
     height: 35vh;
@@ -208,85 +212,4 @@ footer {
 
 .rede_social:hover {
     background-color: #fff;
-}
-
-#monitor{
-    border: 0.4vh solid #00ff88;
-    border-radius: 4vh;
-    background-color: #201b2c;
-}
-
-#joao{
-    text-align: center;
-    font-size: 10vh;
-    color: #00ff88;
-    animation: joao 10s linear infinite;
-}
-
-.inputs{
-    color: #fff;
-    background-color: rgb(114, 114, 114);
-    font-size: 4vh;
-    text-align: center;
-    margin: 2vh auto;
-    width: 15vh;
-    border: none;
-}
-
-#input{
-    display: flex;
-    justify-content: center;
-}
-
-#ligar{
-    animation: ligar 10s linear infinite;
-}
-
-#desligar{
-    animation: desligar 10s linear infinite;
-}
-
-@keyframes joao {
-    0%{
-        color: #201b2c;
-    }
-    49.9%{
-        color: #201b2c;
-    }
-    50%{
-        color: #00ff88;
-    }
-    100%{
-        color: #00ff88;
-    }
-}
-
-@keyframes ligar {
-    0%{
-        background-color: #1c1725;
-    }
-    49.9%{
-        background-color: #1c1725;
-    }
-    50%{
-        background-color: #00ff88;
-    }
-    100%{
-        background-color: #00ff88;
-    }
-}
-
-@keyframes desligar {
-    0%{
-        background-color: #00ff88;
-    }
-    49.9%{
-        background-color: #00ff88;
-    }
-    50%{
-        background-color: #1c1725;
-    }
-    100%{
-        background-color: #1c1725;
-    }
 }
