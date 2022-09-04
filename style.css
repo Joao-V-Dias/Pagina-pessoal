@@ -7,11 +7,11 @@
     overflow-x: hidden;
 }
 
-body{
+body {
     background-color: #201b2c;
 }
 
-header{
+header {
     width: 100%;
     height: 10vh;
     position: fixed;
@@ -23,15 +23,19 @@ header{
     background-color: #1b1624;
 }
 
-li{
+li {
     display: inline;
     margin: 3vh;
 }
 
-.cabecalho{
+.cabecalho {
     list-style: none;
     color: #fff;
     text-decoration: none;
+}
+
+.cabecalho:hover {
+    color: rgb(167, 167, 167);
 }
 
 #inicio {
@@ -42,6 +46,28 @@ li{
     margin: auto;
     justify-content: center;
     align-items: center;
+}
+
+#text_inicio {
+    height: 40vh;
+}
+
+#text_inicio>h2 {
+    font-size: 10vh;
+    color: rgb(209, 206, 206);
+}
+
+span {
+    color: #00ff88;
+}
+
+.btn_inicio {
+    width: 25vh;
+    height: 6vh;
+    font-size: 3vh;
+    margin-right: 3vh;
+    background-color: #00ff88;
+    border: none;
 }
 
 #img_astronauta {
@@ -57,26 +83,7 @@ li{
     border: 0.3vh solid black;
 }
 
-#text_inicio>h2 {
-    font-size: 10vh;
-    color: rgb(209, 206, 206);
-}
-
-#text_inicio>p {
-    font-size: 5vh;
-    color: rgb(177, 177, 177);
-    margin-bottom: 1vh;
-}
-
-.btn_inicio {
-    width: 25vh;
-    height: 6vh;
-    font-size: 3vh;
-    margin-right: 3vh;
-    background-color: #00ff88;
-}
-
-#sobre_mim{
+#sobre_mim {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -84,7 +91,7 @@ li{
     align-items: center;
 }
 
-#text_sobre_mim{
+#text_sobre_mim {
     font-size: 3vh;
     color: rgb(165, 165, 165);
     width: 80%;
@@ -94,17 +101,20 @@ li{
     box-shadow: 2vh 1vh 11vh rgba(0, 0, 0, 0.69);
 }
 
-h4{
+h4 {
     font-size: 7vh;
     color: #00ff88;
 }
 
-#foto{
+#foto {
+    margin: 2vh;
     width: 50vh;
+    border-radius: 4vh;
+    border: #00ff88 0.3vh solid;
     float: left;
 }
 
-#projetos{
+#projetos {
     width: 100%;
     height: auto;
     display: flex;
@@ -112,59 +122,69 @@ h4{
     align-items: center;
 }
 
-#text_projetos{
+#text_projetos {
     width: 80%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
 }
 
-.card_projeto{
+h3 {
+    font-size: 10vh;
+    color: #00ff88;
+    margin-top: 10vh;
+}
+
+.card_projeto {
     width: 60vh;
-    height: 60vh;
+    height: 70vh;
     margin: auto;
     text-align: center;
 }
 
-.img_projeto{
+.img_projeto {
+    margin: 1vh;
     width: 50vh;
     height: 30vh;
 }
 
-h5{
+.img_projeto:hover {
+    scale: 1.15;
+    transition: 0.4s;
+}
+
+h5 {
     font-size: 4vh;
     color: #03e079;
 }
 
-.descricao{
+.descricao {
     font-size: 2vh;
     color: rgb(199, 199, 199);
 }
 
-.tecnologias{
+.tecnologias {
     font-size: 2.5vh;
-    color:#1c995f;
+    color: #1c995f;
 }
 
-.btn_visualizar{
+.btn_visualizar {
     width: 30vh;
     height: 6vh;
     font-size: 3vh;
     margin-top: 2vh;
     background-color: #03e079;
+    border: none;
 }
 
-h3{
-    font-size: 10vh;
-    color: #00ff88;
-    margin-top: 7vh;
+button:hover {
+    scale: 1.06;
+    transition: 0.2s;
+    background-color: #fff;
+    cursor: pointer;
 }
 
-span {
-    color: #00ff88;
-}
-
-footer{
+footer {
     width: 100%;
     height: 10vh;
     display: flex;
@@ -175,4 +195,15 @@ footer{
     background-color: #0f0d14;
 }
 
-/*00ff88*/
+.rede_social {
+    text-align: center;
+    width: 6vh;
+    margin: 1vh;
+    border: #00ff88 0.1vh solid;
+    border-radius: 50%;
+    background-color: #00ff88;
+}
+
+.rede_social:hover {
+    background-color: #fff;
+}
