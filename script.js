@@ -1,104 +1,65 @@
-let scene,
-  camera,
-  fieldOfView,
-  aspectRatio,
-  nearPlane,
-  farPlane,
-  renderer,
-  container,
-  rocket,
-  HEIGHT,
-  WIDTH;
+import * as THREE from "three";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+let mouseX = 0;
+let mouseY = 0;
 
-const createScene = () => {
-  HEIGHT = window.innerHeight;
-  WIDTH = window.innerWidth;
+const teste = document.querySelector(".home");
 
-  scene = new THREE.Scene();
+teste.addEventListener("mousemove", (event) => {
+  console.log("Passou");
 
-  scene.fog = new THREE.Fog(0x5d0361, 10, 1500);
+  mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+  mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+});
 
-  aspectRatio = WIDTH / HEIGHT;
-  fieldOfView = 60;
-  nearPlane = 1;
-  farPlane = 10000;
-  camera = new THREE.PerspectiveCamera(
-    fieldOfView,
-    aspectRatio,
-    nearPlane,
-    farPlane
-  );
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(
+  35,
+  window.innerWidth / window.innerHeight,
+  1,
+  1000
+);
 
-  camera.position.x = 0;
-  camera.position.z = 400;
-  camera.position.y = -10;
+// Configurando o renderizador com transparência
+const renderer = new THREE.WebGLRenderer({ alpha: true }); // Define alpha como true para permitir transparência
+renderer.setSize(window.innerWidth, window.innerHeight);
+teste.appendChild(renderer.domElement);
 
-  renderer = new THREE.WebGLRenderer({
-    alpha: true,
-    antialias: true
-  });
-  renderer.setSize(WIDTH, HEIGHT);
+const loader = new GLTFLoader(); // Usando GLTFLoader diretamente
 
-  renderer.shadowMap.enabled = true;
+let astronautModel; // Variável para armazenar o modelo do Porsche
 
-  container = document.getElementById("canvas");
-  container.appendChild(renderer.domElement);
+loader.load(
+  "./img/little_astronaut.glb",
+  function (gltf) {
+    astronautModel = gltf.scene; // Armazena o modelo carregado na variável
+    scene.add(astronautModel);
 
-  window.addEventListener("resize", handleWindowResize, false);
+    astronautModel.position.set(0, -1.7, 0);
+  },
+  undefined,
+  function (error) {
+    console.error(error);
+  }
+);
 
-  let loader = new THREE.GLTFLoader();
-  loader.load( "https://stivs.dev/assets/rocket/rocket.gltf",
-    (gltf) => {
-      rocket = gltf.scene;
-      rocket.position.y = 50;
-      scene.add(rocket);
-    }
-  );
-};
+camera.position.z = 5;
 
-const handleWindowResize = () => {
-  HEIGHT = window.innerHeight;
-  WIDTH = window.innerWidth;
-  renderer.setSize(WIDTH, HEIGHT);
-  camera.aspect = WIDTH / HEIGHT;
-  camera.updateProjectionMatrix();
-};
+// Adiciona uma luz direcional à cena
+const directionalLight = new THREE.DirectionalLight(0xc986e0, 5);
 
-const createLights = () => {
-  const ambientLight = new THREE.HemisphereLight(0x404040, 0x404040, 1);
+function animate() {
+  requestAnimationFrame(animate);
 
-  const directionalLight = new THREE.DirectionalLight(0xdfebff, 1);
-  directionalLight.position.set(-300, 0, 600);
-
-  const pointLight = new THREE.PointLight(0xa11148, 2, 1000, 2);
-  pointLight.position.set(200, -100, 50);
-
-  scene.add(ambientLight, directionalLight, pointLight);
-};
-
-const targetRocketPosition = 40;
-const animationDuration = 2000;
-
-const loop = () => {
-  const t = (Date.now() % animationDuration) / animationDuration;
-
-  renderer.render(scene, camera);
-
-  const delta = targetRocketPosition * Math.sin(Math.PI * 2 * t);
-  if (rocket) {
-    rocket.rotation.y += 0.1;
-    rocket.position.y = delta;
+  if (astronautModel) {
+    astronautModel.rotation.y += 0.008; // Rotaciona em torno do eixo y
   }
 
-  requestAnimationFrame(loop);
-};
-
-const main = () => {
-  createScene();
-  createLights();
+  directionalLight.position.x = mouseX;
+  directionalLight.position.y = mouseY;
+  scene.add(directionalLight);
 
   renderer.render(scene, camera);
-  loop();
-};
+}
 
-main();
+animate();
