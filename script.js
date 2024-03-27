@@ -58,3 +58,11 @@ function animate() {
 }
 
 animate();
+
+window.addEventListener('load', function() {
+  document.querySelector(".load").style.animation = "loadingOut 0.8s";
+  this.setTimeout(()=>{
+    document.querySelector(".load").style.display = "none";
+    document.querySelector("body").style.overflowY = "visible";
+  },600)
+});
