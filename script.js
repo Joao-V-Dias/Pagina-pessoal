@@ -5,7 +5,7 @@ const home = document.querySelector(".home");
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  22,
+  45,
   window.innerWidth / window.innerHeight,
   1,
   1000
@@ -45,7 +45,14 @@ document.addEventListener("mousemove", function (event) {
 function animate() {
   requestAnimationFrame(animate);
 
-  if (planetModel) planetModel.rotation.y -= 0.001;
+  const time = performance.now() * 0.00008;
+  const radius = 2.5;
+  const cameraX = Math.sin(time) * radius;
+  console.log(cameraX)
+  const cameraZ = Math.cos(time) * radius;
+  camera.position.set(cameraX, 0, cameraZ);
+
+  camera.lookAt(0, 0, 0);
 
   renderer.render(scene, camera);
 }
