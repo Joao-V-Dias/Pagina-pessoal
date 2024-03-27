@@ -15,7 +15,7 @@
   width: 200vw;
   display: flex;
   left: 0;
-  animation: animStar 70s linear infinite;
+  animation: animStar 30s linear infinite;
 }
 
 .star {
@@ -30,7 +30,7 @@
   width: 200vw;
   display: flex;
   left: 0;
-  animation: animStar 100s linear infinite;
+  animation: animStar 60s linear infinite;
 }
 
 .star3-package {
@@ -39,7 +39,7 @@
   width: 200vw;
   display: flex;
   left: 0;
-  animation: animStar 150s linear infinite;
+  animation: animStar 120s linear infinite;
 }
 
 #stars {

@@ -1,41 +1,30 @@
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-let mouseX = 0;
-let mouseY = 0;
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 
-const teste = document.querySelector(".home");
-
-teste.addEventListener("mousemove", (event) => {
-  console.log("Passou");
-
-  mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-  mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-});
+const home = document.querySelector(".home");
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
-  35,
+  22,
   window.innerWidth / window.innerHeight,
   1,
   1000
 );
 
-// Configurando o renderizador com transparência
-const renderer = new THREE.WebGLRenderer({ alpha: true }); // Define alpha como true para permitir transparência
+// Configurando o renderizador
+const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
-teste.appendChild(renderer.domElement);
+home.appendChild(renderer.domElement);
 
-const loader = new GLTFLoader(); // Usando GLTFLoader diretamente
+const loader = new GLTFLoader();
 
-let astronautModel; // Variável para armazenar o modelo do Porsche
+let planetModel;
 
 loader.load(
-  "./img/little_astronaut.glb",
+  "./img/stylized_planet.glb",
   function (gltf) {
-    astronautModel = gltf.scene; // Armazena o modelo carregado na variável
-    scene.add(astronautModel);
-
-    astronautModel.position.set(0, -1.7, 0);
+    planetModel = gltf.scene; // Armazena o modelo carregado na variável
+    scene.add(planetModel);
   },
   undefined,
   function (error) {
@@ -45,19 +34,18 @@ loader.load(
 
 camera.position.z = 5;
 
-// Adiciona uma luz direcional à cena
-const directionalLight = new THREE.DirectionalLight(0xc986e0, 5);
+document.addEventListener("mousemove", function (event) {
+  const rotationX = (event.pageY / window.innerHeight) * Math.PI * 0.05;
+  const rotationY = (event.pageX / window.innerWidth) * Math.PI * 0.05;
+
+  planetModel.rotation.x = rotationX;
+  planetModel.rotation.y = rotationY;
+});
 
 function animate() {
   requestAnimationFrame(animate);
 
-  if (astronautModel) {
-    astronautModel.rotation.y += 0.008; // Rotaciona em torno do eixo y
-  }
-
-  directionalLight.position.x = mouseX;
-  directionalLight.position.y = mouseY;
-  scene.add(directionalLight);
+  if (planetModel) planetModel.rotation.y -= 0.001;
 
   renderer.render(scene, camera);
 }
