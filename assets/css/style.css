@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #000000;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw 8vw 0 8vw;
+  width: 100vw;
+}
+
+.logo > img {
+  width: 2.5rem;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.nav-link > a {
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.nav-line {
+  height: 3px;
+  width: 0%;
+  background-color: #ffffff;
+  transition: 0.3s;
+}
+
+.nav-link > a:hover ~ .nav-line {
+  width: 100%;
+}
+
+#home {
+  margin: 1vw 8vw;
+  padding: 5rem 0;
+  height: auto;
+  font-size: 1.2rem;
+}
+
+#home > p {
+  margin: 0.8rem 0;
+  opacity: 0.8;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top: 5rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem 0;
+}
+
+.btn > a {
+  gap: 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ffffff;
+  transition: 0.3s;
+}
+
+.btn > a:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn > a > img {
+  width: 2rem;
+}
+
+#sobre {
+  margin: 0 8vw;
+  font-size: 1.2rem;
+}
+
+.sobre-mim > p {
+  opacity: 0.8;
+  margin: 1rem 0;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 2rem 0 1rem 0;
+}
+
+.cards-tech {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.card-tech {
+  margin-top: 1rem;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.card-tech > img {
+  width: 4rem;
+}
+
+#projetos {
+  margin: 0 8vw;
+}
+
+#projetos > p:hover {
+  opacity: 0.8;
+}
+
+.cards-projeto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-projeto {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-projeto > .btn > a {
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.card-projeto > img {
+  width: 40vw;
+  height: 20vw;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin: 0.3rem 0;
+}
+
+#contato {
+  margin: 0 8vw;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-area {
+  position: relative;
+  height: 3rem;
+  line-height: 3rem;
+}
+
+.input-campo {
+  position: absolute;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  padding: 0 1rem;
+  line-height: 3rem;
+  border: 1px solid #ffffff;
+  background: transparent;
+  transition: 0.2s ease;
+  z-index: 1111;
+}
+
+.label {
+  position: absolute;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+  margin: 0 1rem;
+  background-color: #000000;
+  transition: 0.2s ease;
+  height: 30px;
+  line-height: 30px;
+  transform: translate(-15px, -16px) scale(0.8);
+  z-index: 1111;
+}
+
+#textarea,
+textarea {
+  height: 30vh;
+}
+
+form > input {
+  background: #000000;
+  font-size: 1.2rem;
+  padding: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  transition: 0.2s;
+}
+form > input:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1vw 8vw;
+  width: 100vw;
+}
+
+footer > .social {
+  gap: 1rem;
+}
+
+footer > .btn > a {
+  padding: 0.5rem 1rem;
+}
